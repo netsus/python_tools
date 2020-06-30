@@ -24,10 +24,9 @@ msg = MIMEMultipart()
 msg['Subject'] = (' ').join(subject)
 msg['From'] = '[내 이메일 입력하는 곳]'
 msg['To'] = '[받는 메일 입력하는 곳]'
-# msg['Cc'] = 'hojaelee@naver.com'
+# msg['Cc'] = '[참조 메일 입력하는 곳]'
 
 # 파일 첨부
-# files=['logo.jpg','sampleinfo.txt']
 for f in files or []:
     with open(f, "rb") as fil:
         part = MIMEApplication(
@@ -39,8 +38,9 @@ for f in files or []:
     msg.attach(part)
 
 # 메일 본문 첨부
-msgText = MIMEText((' ').join(content), 'html') 
-msg.attach(msgText)
+if content:
+    msgText = MIMEText((' ').join(content), 'html') 
+    msg.attach(msgText)
 
 
 #메일 발송
