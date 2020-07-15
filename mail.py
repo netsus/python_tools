@@ -1,5 +1,4 @@
-#!/home/cwjcsk/miniconda2/envs/py3/bin/python3.6
-#-*- coding: utf-8 -*-
+#!/DATA/IMBDx/home/cwjcsk/miniconda2/envs/py3/bin/python3.6
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
